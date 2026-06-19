@@ -16,5 +16,7 @@ Streamlit / Tableau.
 - `dashboards/` — Streamlit app / Tableau workbooks
 - `reports/` — product insights write-up and figures
 
-## Status
-Phase 0 complete — environment, data, and database set up.
+## Problem Statement
+
+    We want news readers to discover relevant, varied stories without being shown the same articles or topic
+    repeatedly. We aim to cultivate an audience with repeat engagement across the time frame. A recommendation system focusing solely on click through rate can ruin recommendations and create feeds focused only on suggesting the most popular articles, encouraging repetition and narrowing topics; A long term retention risk.To balance the trade off, we should quantify the trade off between the demand for an increase in immediate engagement and a diverse recommendation system by identifying the exchange rate between engagement and diversity and recommend where it stops being worth paying. A success will be consistent click through rate, lowered topic repetition and increased intra list diversity, verified with experiment and guardrails. Failures can be identified when recommendations focus solely on few popular articles, users get suggested only a narrow set of topics, and readers are exposed to similar content leads to higher fatigue/churn.
