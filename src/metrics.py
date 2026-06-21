@@ -1,3 +1,4 @@
+"""Reusable metric functions for the MIND project."""
 import numpy as np
 
 def gini(x):
@@ -18,8 +19,6 @@ def gini_diff_ci(df, col_a, col_b, n_boot=2000):
     a = df[col_a].values.astype(float)
     b = df[col_b].values.astype(float)
     n = len(df)
-    diffs = []
-    for _ in range(n_boot):
-        idx = np.random.randint(0, n, n)        
-        diffs.append(gini(a[idx]) - gini(b[idx]))
+    diffs = [gini(a[idx]) - gini(b[idx])
+             for idx in (np.random.randint(0, n, n) for _ in range(n_boot))]
     return np.mean(diffs), np.percentile(diffs, [2.5, 97.5])
